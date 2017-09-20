@@ -1,0 +1,30 @@
+name: Ab3P
+version: 0.1
+mode: complete
+resources:
+   main:
+      - PUBMED:
+           format: txt
+#      - AGRICOLA:
+#         format: bioc
+#      - PMCOA:
+#        format: bioc
+   test:
+      - PUBMED_TWOFILES:
+           rename: PUBMED
+           format: txt
+#      - AGRICOLA_TWOFILES:
+#           rename: AGRICOLA
+#           format: bioc
+#      - PMCOA_TWOFILES:
+#        rename: PMCOA
+#        format: bioc
+#build:
+#   - sh buildNCBILib.sh
+#   - make
+run:
+   - ./identify_abbr {IN:PUBMED/*} > {OUT:ABBRS/*}
+   - python gatherAbbrevs.py --input {IN:ABBRS/*} --output {OUT:ABBRCOUNTS/*}
+   - python combineAbbrevCounts.py --inDir {IN:ABBRCOUNTS} --outFile {OUT:OUTFILE}
+output: OUTFILE
+
