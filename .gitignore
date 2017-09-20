@@ -7,3 +7,8 @@ WordData/hshset_*
 identify_abbr
 make_wordCountHash
 make_wordSet
+
+.pubrunner/
+.snakemake/
+NCBITextLib/
+
