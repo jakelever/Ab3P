@@ -1,4 +1,4 @@
-NCBITEXTLIB=** location of NCBITextLib **
+NCBITEXTLIB=./NCBITextLib
 LIBPATH=./lib
 OS=-g
 # OS=-O
