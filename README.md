@@ -1,6 +1,7 @@
 # Abbreviation Plus Pseudo-Precision (Ab3P) #
 
-[![Build Status](https://travis-ci.org/jakelever/Ab3P.svg?branch=master)](https://travis-ci.org/jakelever/Ab3P)
+[![Build Status](https://travis-ci.org/jakelever/Ab3P.svg?branch=master)](https://travis-ci.org/jakelever/Ab3P) 
+[![PubRunner Status](http://pubrunner.org/shield.php?name=Ab3P)](http://pubrunner.org/results.html)
 
 Ab3P is an abbreviation definition detector. A set of rules recognizes
 simple patterns such as Alpha Beta (AB) as well as more involved
