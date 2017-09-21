@@ -19,11 +19,11 @@ resources:
 #      - PMCOA_TWOFILES:
 #        rename: PMCOA
 #        format: bioc
-#build:
-#   - sh buildNCBILib.sh
-#   - make
+build:
+   - sh buildNCBILib.sh
+   - make
 run:
-   - ./identify_abbr {IN:PUBMED/*} > {OUT:ABBRS/*}
+   - ./identify_abbr {IN:PUBMED/*} > {OUT:ABBRS/*} 2>/dev/null
    - python gatherAbbrevs.py --input {IN:ABBRS/*} --output {OUT:ABBRCOUNTS/*}
    - python combineAbbrevCounts.py --inDir {IN:ABBRCOUNTS} --outFile {OUT:OUTFILE}
 output: OUTFILE
