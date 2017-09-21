@@ -2,8 +2,8 @@ language: python
 python:
   - "3.5"
 install:
-  - pip install https://github.com/jakelever/pubrunner/archive/master.zip
-  - mv .pubrunner.settings.yml ~
+  - pip install pubrunner
+  - mv .pubrunner.settings.default.yml ~/.pubrunner.settings.yml
 # command to run tests
 script:
    - pubrunner --test .
