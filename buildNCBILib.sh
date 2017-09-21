@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euxo pipefail
+set -eux
 
 rm -fr NCBITextLib
 git clone https://github.com/ncbi-nlp/NCBITextLib
