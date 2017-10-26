@@ -6,15 +6,23 @@ resources:
    main:
       - PUBMED:
            format: txt
+           removePMCOADuplicates: true
+      - PMCOA:
+           format: txt
    test:
       - PUBMED_TWOFILES:
            rename: PUBMED
+           format: txt
+           removePMCOADuplicates: true
+      - PMCOA_TWOJOURNALS:
+           rename: PMCOA
            format: txt
 build:
    - sh buildNCBILib.sh
    - make
 run:
    - ./identify_abbr {IN:PUBMED/*} > {OUT:ABBRS/*} 2>/dev/null
+   - ./identify_abbr {IN:PMCOA/*} > {OUT:ABBRS/*} 2>/dev/null
    - python gatherAbbrevs.py --input {IN:ABBRS/*} --output {OUT:ABBRCOUNTS/*}
    - python combineAbbrevCounts.py --inDir {IN:ABBRCOUNTS} --outFile {OUT:abbreviations.tsv}
 output: abbreviations.tsv
