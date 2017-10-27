@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
 	counter = Counter()
 	#pattern = re.compile("^  [A-Za-z0-9]*\|.*\|[0-9\.]*$")
-	pattern = re.compile("^\s*.*\|.*\|[0-9]+\.?[0-9\.]*$")
+	pattern = re.compile("^\s*.*\|.*\|[0-9]+\.?[0-9]*$")
 	with codecs.open(args.input,'r','utf-8') as inF, codecs.open(args.output,'w','utf-8') as outF:
 		for line in inF:
 			line = line.strip()
