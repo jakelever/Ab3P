@@ -11,19 +11,17 @@ if __name__ == '__main__':
 	args = parser.parse_args()
 
 	counter = Counter()
-	#pattern = re.compile("^  [A-Za-z0-9]*\|.*\|[0-9\.]*$")
-	pattern = re.compile("^\s*.*\|.*\|[0-9]+\.?[0-9]*$")
+	pattern = re.compile("^  [^|]*\|[^|]*\|[0-9]+\.[0-9]+$")
 	with codecs.open(args.input,'r','utf-8') as inF, codecs.open(args.output,'w','utf-8') as outF:
 		for line in inF:
-			line = line.strip()
+			line = line.rstrip("\n")
 			if pattern.match(line):
-				split = line.split('|')
+				split = line.replace('\t',' ').split('|')
 				shortterm = split[0].strip()
 				longterm = "|".join(split[1:-1]).strip()
 				score = float(split[-1].strip())
 				if score > args.threshold:
 					counter[(shortterm,longterm)] += 1
-				#outF.write(line+"\n")
 
 	keys = sorted(counter.keys())
 	with codecs.open(args.output,'w','utf-8') as outF:
