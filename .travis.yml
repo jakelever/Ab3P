@@ -6,4 +6,4 @@ install:
   - mv .pubrunner.settings.default.yml ~/.pubrunner.settings.yml
 # command to run tests
 script:
-   - pubrunner --test .
+   - pubrunner --defaultsettings --test .
