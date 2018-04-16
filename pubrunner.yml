@@ -10,11 +10,12 @@ resources:
       - PMCOA:
            format: txt
    test:
-      - PUBMED_TWOFILES:
+      - PUBMED_CUSTOM:
+           pmids: 25155290
            rename: PUBMED
            format: txt
-           removePMCOADuplicates: true
-      - PMCOA_TWOJOURNALS:
+      - PMCOA_CUSTOM:
+           pmcids: 5777811
            rename: PMCOA
            format: txt
 build:
